@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		625B558F2AAE72E000B0875D /* MyGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 625B558E2AAE72E000B0875D /* MyGameController.m */; };
 		62F6A4462AAACBF800A4338D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F6A4452AAACBF800A4338D /* main.m */; };
 		62F6A44E2AAAD80C00A4338D /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F6A44D2AAAD80C00A4338D /* Dice.m */; };
 		62F6A4512AAADEB000A4338D /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F6A4502AAADEB000A4338D /* InputHandler.m */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		625B558D2AAE72E000B0875D /* MyGameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyGameController.h; sourceTree = "<group>"; };
+		625B558E2AAE72E000B0875D /* MyGameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyGameController.m; sourceTree = "<group>"; };
 		62F6A4422AAACBF800A4338D /* Threelow */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Threelow; sourceTree = BUILT_PRODUCTS_DIR; };
 		62F6A4452AAACBF800A4338D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62F6A44C2AAAD80C00A4338D /* Dice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				62F6A44D2AAAD80C00A4338D /* Dice.m */,
 				62F6A44F2AAADEB000A4338D /* InputHandler.h */,
 				62F6A4502AAADEB000A4338D /* InputHandler.m */,
+				625B558D2AAE72E000B0875D /* MyGameController.h */,
+				625B558E2AAE72E000B0875D /* MyGameController.m */,
 			);
 			path = Threelow;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62F6A44E2AAAD80C00A4338D /* Dice.m in Sources */,
+				625B558F2AAE72E000B0875D /* MyGameController.m in Sources */,
 				62F6A4512AAADEB000A4338D /* InputHandler.m in Sources */,
 				62F6A4462AAACBF800A4338D /* main.m in Sources */,
 			);

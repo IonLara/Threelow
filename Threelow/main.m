@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "Dice.h"
 #import "InputHandler.h"
+#import "MyGameController.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -15,28 +16,37 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Welcome to Threelow!");
         NSArray *numbers = @[@"-",@"⚀",@"⚁",@"⚂",@"⚃",@"⚄",@"⚅"];
         
-        Dice *dice1 = [[Dice alloc] init];
-        [dice1 randomize];
-        Dice *dice2 = [[Dice alloc] init];
-        [dice2 randomize];
-        Dice *dice3 = [[Dice alloc] init];
-        [dice3 randomize];
-        Dice *dice4 = [[Dice alloc] init];
-        [dice4 randomize];
-        Dice *dice5 = [[Dice alloc] init];
-        [dice5 randomize];
+        MyGameController *controller = [[MyGameController alloc] init];
         
-        NSLog(@"Dice = %@ %@ %@ %@ %@", numbers[[dice1 value]],numbers[[dice2 value]],numbers[[dice3 value]],numbers[[dice4 value]],numbers[[dice5 value]]);
+        [controller printDie];
         while (true) {
             NSString *input = [InputHandler receiveInput];
             if([input isEqual:@"roll"])
             {
-                [dice1 randomize];
-                [dice2 randomize];
-                [dice3 randomize];
-                [dice4 randomize];
-                [dice5 randomize];
-                NSLog(@"Dice = %@ %@ %@ %@ %@", numbers[[dice1 value]],numbers[[dice2 value]],numbers[[dice3 value]],numbers[[dice4 value]],numbers[[dice5 value]]);
+                [controller roll];
+                [controller printDie];
+            } else if([input containsString:@"hold"])
+            {
+                NSCharacterSet *newlineCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+                NSMutableString *parsedString = [NSMutableString stringWithString:[input stringByTrimmingCharactersInSet:newlineCharacterSet]];
+                [parsedString replaceOccurrencesOfString:@"hold" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, [parsedString length])];
+                NSScanner *scanner = [NSScanner scannerWithString:parsedString];
+                NSInteger value;
+                if([scanner scanInteger:&value] && [scanner isAtEnd])
+                {
+                    if(value > 0 && value < 6)
+                    {
+                        [controller holdDie:(value - 1)];
+                        [controller printDie];
+                    } else
+                    {
+                        NSLog(@"Index out of range!");
+                    }
+                } else
+                {
+                    NSLog(@"Invalid input!");
+                }
+                
             }
         }
         
