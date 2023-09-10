@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Dice.h"
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -26,6 +27,18 @@ int main(int argc, const char * argv[]) {
         [dice5 randomize];
         
         NSLog(@"Dice = %@ %@ %@ %@ %@", numbers[[dice1 value]],numbers[[dice2 value]],numbers[[dice3 value]],numbers[[dice4 value]],numbers[[dice5 value]]);
+        while (true) {
+            NSString *input = [InputHandler receiveInput];
+            if([input isEqual:@"roll"])
+            {
+                [dice1 randomize];
+                [dice2 randomize];
+                [dice3 randomize];
+                [dice4 randomize];
+                [dice5 randomize];
+                NSLog(@"Dice = %@ %@ %@ %@ %@", numbers[[dice1 value]],numbers[[dice2 value]],numbers[[dice3 value]],numbers[[dice4 value]],numbers[[dice5 value]]);
+            }
+        }
         
     }
     return 0;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		62F6A4462AAACBF800A4338D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F6A4452AAACBF800A4338D /* main.m */; };
 		62F6A44E2AAAD80C00A4338D /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F6A44D2AAAD80C00A4338D /* Dice.m */; };
+		62F6A4512AAADEB000A4338D /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F6A4502AAADEB000A4338D /* InputHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		62F6A4452AAACBF800A4338D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62F6A44C2AAAD80C00A4338D /* Dice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
 		62F6A44D2AAAD80C00A4338D /* Dice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
+		62F6A44F2AAADEB000A4338D /* InputHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		62F6A4502AAADEB000A4338D /* InputHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				62F6A4452AAACBF800A4338D /* main.m */,
 				62F6A44C2AAAD80C00A4338D /* Dice.h */,
 				62F6A44D2AAAD80C00A4338D /* Dice.m */,
+				62F6A44F2AAADEB000A4338D /* InputHandler.h */,
+				62F6A4502AAADEB000A4338D /* InputHandler.m */,
 			);
 			path = Threelow;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62F6A44E2AAAD80C00A4338D /* Dice.m in Sources */,
+				62F6A4512AAADEB000A4338D /* InputHandler.m in Sources */,
 				62F6A4462AAACBF800A4338D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
