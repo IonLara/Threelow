@@ -25,6 +25,34 @@ int main(int argc, const char * argv[]) {
             {
                 [controller roll];
                 [controller printDie];
+            } else if([input containsString:@"unhold"])
+            {
+                NSCharacterSet *newlineCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+                NSMutableString *parsedString = [NSMutableString stringWithString:[input stringByTrimmingCharactersInSet:newlineCharacterSet]];
+                [parsedString replaceOccurrencesOfString:@"unhold" withString:@"" options:NSLiteralSearch range:NSMakeRange(0, [parsedString length])];
+                NSScanner *scanner = [NSScanner scannerWithString:parsedString];
+                NSInteger value;
+                if([scanner scanInteger:&value] && [scanner isAtEnd])
+                {
+                    if(value > 0 && value < 6)
+                    {
+                        if(controller.dice[value - 1].isHeld)
+                        {
+                            [controller holdDie:(value - 1)];
+                            [controller printDie];
+                        } else
+                        {
+                            NSLog(@"Dice %ld is not held...", (long)value);
+                        }
+                        
+                    } else
+                    {
+                        NSLog(@"Index out of range!");
+                    }
+                } else
+                {
+                    NSLog(@"Invalid input!");
+                }
             } else if([input containsString:@"hold"])
             {
                 NSCharacterSet *newlineCharacterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];

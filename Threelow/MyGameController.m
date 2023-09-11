@@ -34,8 +34,16 @@
 }
 -(void) holdDie:(NSInteger) index
 {
-    _dice[index].isHeld = true;
-    [_held addObject:_dice[index]];
+    if (!_dice[index].isHeld)
+    {
+        _dice[index].isHeld = true;
+        [_held addObject:_dice[index]];
+    } else
+    {
+        _dice[index].isHeld = false;
+        [_held removeObject:_dice[index]];
+    }
+
 }
 -(void) printDie
 {
