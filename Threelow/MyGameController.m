@@ -50,6 +50,7 @@
     NSArray *numbers = @[@"-",@"⚀",@"⚁",@"⚂",@"⚃",@"⚄",@"⚅"];
     NSArray *numbersHeld = @[@"-",@"[⚀]",@"[⚁]",@"[⚂]",@"[⚃]",@"[⚄]",@"[⚅]"];
     NSMutableArray *numberString = [[NSMutableArray alloc] init];
+    NSInteger score = 0;
     for(Dice *die in _dice)
     {
         if(die.isHeld)
@@ -60,7 +61,11 @@
             [numberString addObject:numbers[die.value]];
         }
     }
-    NSLog(@"Dice = %@ %@ %@ %@ %@", numberString[0], numberString[1], numberString[2], numberString[3], numberString[4]);
+    for(Dice *die in _held)
+    {
+        score += die.value;
+    }
+    NSLog(@"\nChoose your action:\nroll - Rolls all unheld dice\nhold <dieNumber> - Holds chosen die\nunhold <dieNumber> - Unholds chosen die\nreset - Unholds all dice\nDice = %@ %@ %@ %@ %@\nScore: %ld", numberString[0], numberString[1], numberString[2], numberString[3], numberString[4], (long)score);
 }
 -(void) resetDie
 {

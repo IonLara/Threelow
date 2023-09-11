@@ -64,8 +64,14 @@ int main(int argc, const char * argv[]) {
                 {
                     if(value > 0 && value < 6)
                     {
-                        [controller holdDie:(value - 1)];
-                        [controller printDie];
+                        if(!controller.dice[value - 1].isHeld)
+                        {
+                            [controller holdDie:(value - 1)];
+                            [controller printDie];
+                        } else
+                        {
+                            NSLog(@"Dice %ld already held...", (long)value);
+                        }
                     } else
                     {
                         NSLog(@"Index out of range!");
