@@ -75,6 +75,10 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"Invalid input!");
                 }
                 
+            } else if([input isEqual:@"reset"])
+            {
+                [controller resetDie];
+                [controller printDie];
             }
         }
         

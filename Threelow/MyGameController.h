@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) roll;
 -(void) holdDie:(NSInteger) index;
 -(void) printDie;
+-(void) resetDie;
 @end
 
 NS_ASSUME_NONNULL_END

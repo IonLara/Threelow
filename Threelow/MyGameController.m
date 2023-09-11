@@ -62,4 +62,12 @@
     }
     NSLog(@"Dice = %@ %@ %@ %@ %@", numberString[0], numberString[1], numberString[2], numberString[3], numberString[4]);
 }
+-(void) resetDie
+{
+    for(Dice *die in _dice)
+    {
+        die.isHeld = false;
+    }
+    [_held removeAllObjects];
+}
 @end
